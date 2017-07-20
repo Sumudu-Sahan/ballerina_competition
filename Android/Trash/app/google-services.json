@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "213448965311",
+    "firebase_url": "https://trash-hunter.firebaseio.com",
+    "project_id": "trash-hunter",
+    "storage_bucket": "trash-hunter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213448965311:android:02fdc8890f50e9f3",
+        "android_client_info": {
+          "package_name": "wso2hackethon.finite4.trash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213448965311-njhq01v15p8g3m0m3af6igbd71sklgf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_IKuekkGdmArI5SNXT8MaNEJv1UibxKU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

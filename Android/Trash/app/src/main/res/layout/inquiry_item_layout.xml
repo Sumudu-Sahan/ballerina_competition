@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        android:clickable="true"
+        android:id="@+id/inquiryItemButton"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="@dimen/border_size2"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="@dimen/listItemSize2"
+                    android:id="@+id/inquiryImageDisplay"
+                    android:layout_height="@dimen/listItemSize2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/paddingSize2"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/text_size_6"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:padding="@dimen/border_size"
+                    android:id="@+id/inquiryTitleDisplay"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/inquiryDescriptionDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_size"
+                    android:textColor="#444444"
+                    android:textSize="@dimen/text_size_7" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/text_size_7"
+                    android:textColor="#444444"
+                    android:padding="@dimen/border_size"
+                    android:id="@+id/inquiryAddedUserNameDisplay"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/text_size_7"
+                    android:textStyle="bold"
+                    android:padding="@dimen/border_size"
+                    android:id="@+id/inquiryResultDisplay"
+                    android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="@dimen/text_size_7"
+                        android:textColor="#000088"
+                        android:padding="@dimen/border_size"
+                        android:id="@+id/inquiryDateTimeDisplay"
+                        android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="@dimen/logPadding"
+                        android:id="@+id/viewOnMapButton"
+                        android:src="@drawable/view_on_map"
+                        android:clickable="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="@dimen/logPadding" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

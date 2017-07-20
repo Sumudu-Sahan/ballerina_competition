@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FF0000</color>
+    <color name="colorAccent1">#00ABAA</color>
+    <color name="translucent_black">#80000000</color>
+    <color name="appColor">#000000</color>
+    <color name="fontColorHeadline">#FF8000</color>
+    <color name="fontColorNormal">#FFFFFF</color>
+    <color name="buttonColor">#00b259</color >
 </resources>
