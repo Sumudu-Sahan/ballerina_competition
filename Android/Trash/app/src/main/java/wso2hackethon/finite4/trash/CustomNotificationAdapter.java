@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 /**
- * Created by WAKENSYS on 7/17/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class CustomNotificationAdapter extends BaseAdapter {

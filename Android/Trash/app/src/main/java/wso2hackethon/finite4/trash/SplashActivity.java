@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 /**
- * Created by Sumudu on 7/15/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class SplashActivity extends Activity {

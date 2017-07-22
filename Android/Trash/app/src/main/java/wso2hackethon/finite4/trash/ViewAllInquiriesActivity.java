@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 /**
- * Created by WAKENSYS on 7/17/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class ViewAllInquiriesActivity extends Activity {

@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 /**
- * Created by WAKENSYS on 7/20/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class NotificationActivity extends Activity {

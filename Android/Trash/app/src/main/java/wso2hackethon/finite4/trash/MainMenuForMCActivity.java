@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by Sumudu on 7/16/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class MainMenuForMCActivity extends Activity {

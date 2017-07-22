@@ -21,7 +21,7 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by WAKENSYS on 5/29/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class CustomAllInquiriesAdapter extends BaseAdapter {

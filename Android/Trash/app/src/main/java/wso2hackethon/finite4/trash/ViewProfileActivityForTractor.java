@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 /**
- * Created by WAKENSYS on 7/19/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class ViewProfileActivityForTractor extends Activity {

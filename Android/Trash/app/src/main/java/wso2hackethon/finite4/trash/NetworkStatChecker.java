@@ -11,7 +11,7 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
- * Created by Sumudu on 3/30/2016.
+ * Created by Sumudu on 7/22/2017.
  */
 public class NetworkStatChecker {
     static Data data = new Data();

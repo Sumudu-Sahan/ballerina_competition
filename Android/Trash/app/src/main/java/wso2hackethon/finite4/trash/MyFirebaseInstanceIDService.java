@@ -1,7 +1,7 @@
 package wso2hackethon.finite4.trash;
 
 /**
- * Created by Sumudu on 6/22/2016.
+ * Created by Sumudu on 7/22/2017.
  */
 
 import android.content.SharedPreferences;

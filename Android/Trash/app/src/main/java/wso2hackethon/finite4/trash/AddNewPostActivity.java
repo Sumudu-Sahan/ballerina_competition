@@ -68,7 +68,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 /**
- * Created by WAKENSYS on 7/20/2017.
+ * Created by Sumudu on 7/22/2017.
  */
 
 public class AddNewPostActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{

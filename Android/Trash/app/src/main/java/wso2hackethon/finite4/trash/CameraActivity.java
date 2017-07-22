@@ -1,7 +1,7 @@
 package wso2hackethon.finite4.trash;
 
 /**
- * Created by Sumudu on 7/21/2016.
+ * Created by Sumudu on 7/22/2017.
  */
 
 import android.Manifest;
@@ -42,7 +42,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Admin on 3/3/2016.
+ * Created by Sumudu on 7/22/2017.
  */
 public class CameraActivity extends Activity {
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
