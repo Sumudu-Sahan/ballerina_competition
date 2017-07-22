@@ -1,0 +1,219 @@
+﻿@media only screen and (max-width: 1024px) {
+    .logo > img {
+        width: 130px;
+    }
+
+    nav.main-nav > ul.main-menu > li {
+        display: block;
+        left: -10px;
+        padding-left: 0px;
+        margin: 10px;
+    }
+
+    ul.main-menu {
+        background-color: #333;
+        position: absolute;
+        top: 58px;
+        left: -20px;
+        width: 100vw;
+        height: 0px;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .main-nav li img {
+        transition: 0s;
+    }
+
+    nav.main-nav > ul.main-menu > li > a {
+        transition: 0s;
+    }
+
+    div.logo {
+        width: 100%;
+    }
+
+    nav.main-nav > ul.main-menu > li > a {
+        top: 5px;
+        display: inline-block;
+        margin: auto;
+        width: 87vw;
+    }
+    /*sub menu*/
+    nav.main-nav > ul.main-menu > li.has-sub-menu:hover > ul.sub-menu {
+        position: relative;
+    }
+
+    nav.main-nav > ul.main-menu > li.has-sub-menu > ul.sub-menu > li {
+        width: 100%;
+        text-align: center;
+    }
+    /*trigger*/
+    div.trigger {
+        display: block;
+    }
+
+    div#trigger > img {
+        width: 44px;
+    }
+
+    div#trigger {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        nav.main-nav > ul.main-menu > li > a {
+            width: 82vw;
+        }
+        .input-group > span.input-group-addon:nth-child(1) {
+            width: 100%;
+            background-color: #1e8bc3;
+            color: #fff;
+            text-align: left;
+            display: block;
+            float: none;
+            position: relative;
+        }
+        .panel-body, .panel-body > div {
+            padding: 0px;
+        }
+        .bottom-clock, .bottom-clock > div {
+            padding: 0px;
+        }
+
+        @media only screen and (max-width: 735px) {
+            nav.main-nav > ul.main-menu > li > a {
+                width: 80vw;
+            }
+
+            @media only screen and (max-width: 666px) {
+                nav.main-nav > ul.main-menu > li > a {
+                    width: 77vw;
+                }
+
+                @media only screen and (max-width: 550px) {
+                    nav.main-nav > ul.main-menu > li > a {
+                        width: 68vw;
+                    }
+
+                    @media only screen and (max-width: 413px) {
+                        nav.main-nav > ul.main-menu > li > a {
+                            width: 65vw;
+                        }
+
+                        @media only screen and (max-width: 374px) {
+                            nav.main-nav > ul.main-menu > li > a {
+                                width: 60vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/*ipad pro portrait*/
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
+        .fm-login-form {
+            margin: auto;
+            /* background: red; */
+            height: auto;
+            width: 70%;
+            top: 30vh;
+            position: relative;
+        }
+        .fm-login-field > input {
+            height: 70px !important;
+        }
+        .fm-login-caption {
+            font-size: 34px;
+        }
+        .fm-login-forgot-pw a {
+            font-size: 28px;
+        }
+        input.fm-login-btn, input.fm-signup-btn {
+            width: 100%;
+            height: initial;
+            font-size: 34px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+}
+/*Ipad Portrait*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        .fm-login-field > input {
+            height: 70px !important;
+        }
+        .fm-login-caption {
+            font-size: 34px;
+        }
+        .fm-login-forgot-pw a {
+            font-size: 28px;
+        }
+        input.fm-login-btn, input.fm-signup-btn {
+            width: 100%;
+            height: initial;
+            font-size: 34px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+}
+/*small devices landscape*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) and (orientation : landscape) {
+        .fm-login-form {
+            top: 10vh;
+        }
+        .fm-login-field > input {
+            height: 70px !important;
+        }
+        .fm-login-caption {
+            font-size: 34px;
+        }
+        .fm-login-forgot-pw a {
+            font-size: 28px;
+        }
+        input.fm-login-btn, input.fm-signup-btn {
+            width: 100% !important;
+            height: initial !important;
+            font-size: 34px !important;
+            padding: 20px !important;
+            margin-bottom: 30px !important;
+        }
+}
+/*small devices portrait*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) and (orientation : portrait) {
+        .fm-login-field > input {
+            height: 70px !important;
+        }
+        .fm-login-caption {
+            font-size: 34px;
+        }
+        .fm-login-forgot-pw a {
+            font-size: 28px;
+        }
+        input.fm-login-btn, input.fm-signup-btn {
+            width: 100%;
+            height: initial;
+            font-size: 34px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .fm-login-caption, .fm-login-field {
+            width: 100% !important;
+            display: block !important;
+        }
+        .fm-logo {
+            width: 100%;
+        }
+        .fm-remember-me input[type='checkbox'] {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .fm-login-form {
+            top: 25vh;
+        }
+}

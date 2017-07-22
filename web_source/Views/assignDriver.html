@@ -1,0 +1,99 @@
+<html ng-app="assignDriverApp">
+<head>
+<meta charset="ISO-8859-1">
+<link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+<link href="../Resources/UIGrids/CSS/ui-grid.css" rel="stylesheet" />
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK9wniZkvOlacVZnMGFBp900wKs3wNhMg"></script>
+<script src="../Resources/AngularJS/angular.js"></script>
+<link href="../Resources/ngDialog/css/ngDialog.css" rel="stylesheet" />
+<link href="../Resources/ngDialog/css/ngDialog-theme-default.css" rel="stylesheet" />
+<script src="../Resources/ngDialog/js/ngDialog.js"></script>
+
+<script src="../NGScripts/Module/assignDriverModule.js"></script>
+<script src="../NGScripts/Controller/assignDriverController.js"></script>
+<script src="../NGScripts/Service/assignDriverService.js"></script>
+
+<link href="../Resources/ProjectResource/custom.css" rel="stylesheet" />
+<link href="../Resources/ProjectResource/responsive.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.page-caption').delay(3000).addClass('show-page-caption');
+    });
+</script>
+
+<style>
+    .page-caption {
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show-page-caption {
+        top: 0px;
+        opacity: 1;
+        transition: 1s;
+    }
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid mid-section">
+    <div class="page-caption">
+        <h3>Assign Driver to Routes</h3>
+        <hr />
+    </div>
+    <div ng-controller="assignDriverController">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">Route Name</span>
+                        <select ng-model="drpRoute" class="form-control" id="drpRoute" 
+                            ng-options="route.route_name for route in RouteNames track by route.route_id"></select>
+                        <span class="input-group-addon" id="validate_RouteName"></span>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">Driver Name</span>
+                        <select ng-model="drpDriver" class="form-control" id="drpDriver" 
+                            ng-options="driver.user_name for driver in Drivers track by driver.user_id"></select>
+                        <span class="input-group-addon" id="validate_drpDriver"></span>
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-offset-1 col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-addon">Tractor</span>
+                        <select ng-model="drpTractor" class="form-control" id="drpTractor" 
+                            ng-options="tractor.tractor_number for tractor in Tractors track by tractor.tractor_id"></select>
+                        <span class="input-group-addon" id="validate_RouteName"></span>
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-md-offset-7">
+                        <button class="btn btn-primary btn-small" ng-click="saveRecord()">Save</button>
+                        <button class="btn btn-primary btn-small">Reset</button>
+                    </div>
+            </div>
+    </div> 
+</div>
+</body>
+</html>

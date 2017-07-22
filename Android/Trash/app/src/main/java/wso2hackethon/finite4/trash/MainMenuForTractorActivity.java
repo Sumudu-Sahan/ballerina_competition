@@ -1,6 +1,8 @@
 package wso2hackethon.finite4.trash;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -116,6 +118,14 @@ public class MainMenuForTractorActivity extends AppCompatActivity{
     }
 
     public void backButtonOption(){
-        System.exit(0);
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Do you really want to exit?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        System.exit(0);
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
     }
 }

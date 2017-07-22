@@ -30,7 +30,6 @@ public class CustomAllInquiriesAdapter extends BaseAdapter {
 
     String[]
             garbage_post_id,
-            garbage_post_user_id,
             garbage_post_title,
             garbage_post_description,
             garbage_post_image,
@@ -49,7 +48,6 @@ public class CustomAllInquiriesAdapter extends BaseAdapter {
             Activity activity,
 
             String[] garbage_post_id,
-            String[] garbage_post_user_id,
             String[] garbage_post_title,
             String[] garbage_post_description,
             String[] garbage_post_image,
@@ -67,7 +65,6 @@ public class CustomAllInquiriesAdapter extends BaseAdapter {
         this.activity = activity;
 
         this.garbage_post_id = garbage_post_id;
-        this.garbage_post_user_id = garbage_post_user_id;
         this.garbage_post_title = garbage_post_title;
         this.garbage_post_description = garbage_post_description;
         this.garbage_post_image = garbage_post_image;
@@ -154,7 +151,7 @@ public class CustomAllInquiriesAdapter extends BaseAdapter {
                 Window window = alertDialog.getWindow();
                 window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                final ImageView inquiryFullViewImageDisplay = (ImageView) gvContent.findViewById(R.id.inquiryFullViewImageDisplay);
+                final ImageView inquiryFullViewImageDisplay = (ImageView) alertDialog.findViewById(R.id.inquiryFullViewImageDisplay);
                 Picasso
                         .with(context)
                         .load(garbage_post_image[position])
@@ -176,21 +173,13 @@ public class CustomAllInquiriesAdapter extends BaseAdapter {
                             }
                         });
 
-                final CardView collectedButton = (CardView) alertDialog.findViewById(R.id.collectedButton);
-                collectedButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                final TextView inquiryFullViewTitleDisplay = (TextView) alertDialog.findViewById(R.id.inquiryFullViewTitleDisplay);
+                final TextView inquiryFullViewDescriptionDisplay = (TextView) alertDialog.findViewById(R.id.inquiryFullViewDescriptionDisplay);
+                final TextView inquiryFullViewAddedUserNameDisplay = (TextView) alertDialog.findViewById(R.id.inquiryFullViewAddedUserNameDisplay);
+                final TextView inquiryFullViewAddedDateTimeDisplay = (TextView) alertDialog.findViewById(R.id.inquiryFullViewAddedDateTimeDisplay);
 
-                    }
-                });
-
-                final TextView inquiryFullViewTitleDisplay = (TextView) gvContent.findViewById(R.id.inquiryFullViewTitleDisplay);
-                final TextView inquiryFullViewDescriptionDisplay = (TextView) gvContent.findViewById(R.id.inquiryFullViewDescriptionDisplay);
-                final TextView inquiryFullViewAddedUserNameDisplay = (TextView) gvContent.findViewById(R.id.inquiryFullViewAddedUserNameDisplay);
-                final TextView inquiryFullViewAddedDateTimeDisplay = (TextView) gvContent.findViewById(R.id.inquiryFullViewAddedDateTimeDisplay);
-
-                final TextView statusDisplay = (TextView) gvContent.findViewById(R.id.statusDisplay);
-                final TextView statusNoteDisplay = (TextView) gvContent.findViewById(R.id.statusNoteDisplay);
+                final TextView statusDisplay = (TextView) alertDialog.findViewById(R.id.statusDisplay);
+                final TextView statusNoteDisplay = (TextView) alertDialog.findViewById(R.id.statusNoteDisplay);
 
                 inquiryFullViewTitleDisplay.setText(garbage_post_title[position]);
                 inquiryFullViewDescriptionDisplay.setText(garbage_post_description[position]);

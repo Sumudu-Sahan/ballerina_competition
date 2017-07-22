@@ -1,0 +1,148 @@
+/*font*/
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/*header*/
+div#header {
+    background-color: #333;
+    padding: 20px 20px;
+    border-bottom: 5px solid #008080;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    transition: 0.5s;
+}
+/*logo*/
+div.logo {
+    width: 300px;
+    display: inline-block;
+}
+
+
+.logo > img {
+    width: 130px;
+    -webkit-user-drag: none;
+}
+
+.logo > img:hover {
+    cursor: pointer;
+}
+
+/*navigation*/
+a:hover {
+    text-decoration: none;
+}
+nav.main-nav {
+    width: auto;
+    display: inline-block;
+    float: right;
+}
+
+nav.main-nav a {
+    color: #fff;
+}
+ul.main-menu {
+    margin: 0px;
+    margin-right: 0px;
+}
+nav.main-nav > ul.main-menu > li {
+    position: relative;
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 16px;
+    z-index: 999;
+}
+nav.main-nav > ul.main-menu > li:hover a {
+    color: #11b9b9;
+    font-weight: 400;
+    transition: 0.5s;
+}
+nav.main-nav > ul.main-menu > li > a{
+    text-align: center;
+    transition: 0.5s;
+    position: relative;
+    top: 2px;
+    left: 5px;
+}
+ul.sub-menu {
+    display: none;
+}
+nav.main-nav > ul.main-menu > li.has-sub-menu > ul.sub-menu {
+    position: absolute;
+    padding: 0px;
+    position: absolute;
+    left: 0px;
+}
+nav.main-nav > ul.main-menu > li.has-sub-menu > ul.sub-menu > li{
+    list-style: none;
+    padding: 10px;
+    padding-left: 20px;
+    width: 150px;
+    background-color: #333;
+    border-bottom: 2px solid #008080;
+}
+nav.main-nav > ul.main-menu > li.has-sub-menu > ul.sub-menu > li > a{
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+}
+nav.main-nav > ul.main-menu > li.has-sub-menu:hover > ul.sub-menu {
+    display: block;
+}
+nav.main-nav > ul.main-menu > li.has-sub-menu:hover > ul.sub-menu > li:hover a {
+    color: #11b9b9;
+    font-weight: 400;
+    transition: 0.2s;
+}
+img.main-menu-ico {
+    width: 32px;
+}
+/*trigger*/
+div.trigger {
+    display: none;
+    transition: 0.5s;
+}
+.rotate-90 {
+    -webkit-transform: rotate(180deg);
+    transition: 0.5s;
+}
+.show-menu {
+    height: 260px !important;
+    visibility: visible !important;
+    transition: 0.5s;
+}
+/*fooer*/
+.footer-frame {
+    background-color: #333;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px;
+}
+.footer-frame p {
+    margin: 0px;
+}
+
+/*dashboard*/
+.dashboard-frame {
+    padding: 0px;
+}
+.dashboard-frame > img{
+    width: 100%;
+}
+
+.stickytop {
+    padding: 5px 20px !important;
+    transition: 0.5s;
+}
+.navbar-list-img {
+    width: 22px !important;
+    transition: 0.5s;
+}
+.main-nav li img {
+    transition: 0.5s;
+}
+
+.logo > a > img {
+    width: 90px;
+}

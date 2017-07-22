@@ -1,0 +1,1 @@
+var tractorApp = angular.module('tractorApp', ['angularUtils.directives.dirPagination', 'ngDialog']);

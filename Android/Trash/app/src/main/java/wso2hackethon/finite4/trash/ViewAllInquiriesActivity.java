@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,11 +34,21 @@ public class ViewAllInquiriesActivity extends Activity {
     SwipeRefreshLayout
             swiper;
 
+    ImageView backButton;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_all_inquries_layout);
         context = ViewAllInquiriesActivity.this;
+
+        backButton = (ImageView) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backButtonOption();
+            }
+        });
 
         hiddenLayout = (LinearLayout) findViewById(R.id.hiddenLayout);
         inquiryListView = (ListView) findViewById(R.id.inquiryListView);
@@ -51,6 +62,8 @@ public class ViewAllInquiriesActivity extends Activity {
                 new GetAllInquiries().execute();
             }
         });
+
+        new GetAllInquiries().execute();
     }
 
     @Override
@@ -91,27 +104,25 @@ public class ViewAllInquiriesActivity extends Activity {
             if(result != null){
                 try{
                     String[] garbage_post_id = result[0];
-                    String[] garbage_post_user_id = result[1];
-                    String[] garbage_post_title = result[2];
-                    String[] garbage_post_description = result[3];
-                    String[] garbage_post_image = result[4];
-                    String[] garbage_post_lat = result[5];
-                    String[] garbage_post_lon = result[6];
-                    String[] garbage_post_status = result[7];
-                    String[] garbage_post_status_note = result[8];
-                    String[] garbage_post_added_datetime = result[9];
+                    String[] garbage_post_title = result[1];
+                    String[] garbage_post_description = result[2];
+                    String[] garbage_post_image = result[3];
+                    String[] garbage_post_lat = result[4];
+                    String[] garbage_post_lon = result[5];
+                    String[] garbage_post_status = result[6];
+                    String[] garbage_post_status_note = result[7];
+                    String[] garbage_post_added_datetime = result[8];
 
-                    String[] user_email = result[10];
-                    String[] user_account_type = result[11];
-                    String[] user_name = result[12];
-                    String[] user_image = result[13];
+                    String[] user_email = result[9];
+                    String[] user_account_type = result[10];
+                    String[] user_name = result[11];
+                    String[] user_image = result[12];
 
                     CustomAllInquiriesAdapter customAllInquiriesAdapter = new CustomAllInquiriesAdapter(
                             context,
                             ViewAllInquiriesActivity.this,
 
                             garbage_post_id,
-                            garbage_post_user_id,
                             garbage_post_title,
                             garbage_post_description,
                             garbage_post_image,

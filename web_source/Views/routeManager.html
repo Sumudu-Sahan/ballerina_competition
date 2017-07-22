@@ -1,0 +1,19 @@
+<html ng-app="routeManagerApp">
+<head>
+	<link rel="stylesheet" href="../Stylesheet/map.css">
+	<script src="../Resources/AngularJS/angular.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK9wniZkvOlacVZnMGFBp900wKs3wNhMg"></script>
+	<script src="../NGScripts/Module/routeManagerModule.js"></script>
+	<script src="../NGScripts/Controller/routeManagerController.js"></script>
+	<script src="../NGScripts/Service/routeManagerService.js"></script>
+</head>
+<body>
+<div ng-controller="routeManagerCtrl">
+    <div id="map"></div>
+    <!--<div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <label id="names" >{{marker.title}}</label></a>
+    </div>-->
+</div>
+</body>
+</html>

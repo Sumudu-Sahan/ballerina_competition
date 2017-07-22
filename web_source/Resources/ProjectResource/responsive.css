@@ -1,0 +1,91 @@
+@media only screen and (min-width: 1024px) {
+    .move-2 {
+        margin-top: -130px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .logo > img{
+        width: 130px;
+    }
+    nav.main-nav>ul.main-menu>li {
+        display: block;
+        left: -10px;
+        padding-left: 0px;
+        margin: 10px;
+    }
+    ul.main-menu {
+        background-color: #333;
+        position: absolute;
+        top: 58px;
+        left: -20px;
+        width: 100vw;
+        height: 0px;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+    .main-nav li img {
+        transition: 0s;
+    }
+    nav.main-nav>ul.main-menu>li>a {
+        transition: 0s;
+    }
+    div.logo {
+        width: 100%;
+    }
+    nav.main-nav>ul.main-menu>li>a {
+        top: 5px;
+        display: inline-block;
+        margin: auto;
+        width: 87vw;
+    }
+    /*sub menu*/
+    nav.main-nav>ul.main-menu>li.has-sub-menu:hover>ul.sub-menu {
+        position: relative;
+    }
+    nav.main-nav>ul.main-menu>li.has-sub-menu>ul.sub-menu>li {
+        width: 100%;
+        text-align: center;
+    }
+    /*trigger*/
+    div.trigger {
+        display: block;
+    }
+    div#trigger > img {
+        width: 44px;
+    }
+    div#trigger {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+    }
+    @media only screen and (max-width: 767px) {
+        nav.main-nav>ul.main-menu>li>a {
+            width: 82vw;
+        }
+        @media only screen and (max-width: 735px) {
+            nav.main-nav>ul.main-menu>li>a {
+                width: 80vw;
+            }
+            @media only screen and (max-width: 666px) {
+                nav.main-nav>ul.main-menu>li>a {
+                    width: 77vw;
+                }
+                @media only screen and (max-width: 550px) {
+                    nav.main-nav>ul.main-menu>li>a {
+                        width: 68vw;
+                    }
+                    @media only screen and (max-width: 413px) {
+                        nav.main-nav>ul.main-menu>li>a {
+                            width: 65vw;
+                        }
+                        @media only screen and (max-width: 374px) {
+                            nav.main-nav>ul.main-menu>li>a {
+                                width: 60vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

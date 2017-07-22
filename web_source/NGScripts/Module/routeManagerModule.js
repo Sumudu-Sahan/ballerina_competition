@@ -1,0 +1,1 @@
+var routeManagerApp = angular.module('routeManagerApp', []);

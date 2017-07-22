@@ -1,0 +1,117 @@
+<html ng-app="tractorApp">
+<head>
+<meta charset="ISO-8859-1">
+<link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+<link href="../Resources/UIGrids/CSS/ui-grid.css" rel="stylesheet" />
+
+<style>
+    .myGrid {
+        width: 1000px;
+        height: 400px;
+    }
+</style>
+<script src="../Resources/AngularJS/angular.js"></script>
+<link href="../Resources/ngDialog/css/ngDialog.css" rel="stylesheet" />
+<link href="../Resources/ngDialog/css/ngDialog-theme-default.css" rel="stylesheet" />
+<script src="../Resources/ngDialog/js/ngDialog.js"></script>
+<script src="../Resources/NG-pagination/pagination.js"></script>
+<script src="../NGScripts/Module/tractorModule.js"></script>
+<script src="../NGScripts/Controller/tractorController.js"></script>
+<script src="../NGScripts/Service/tractorService.js"></script>
+
+<link href="../Resources/ProjectResource/custom.css" rel="stylesheet" />
+<link href="../Resources/ProjectResource/responsive.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.page-caption').delay(3000).addClass('show-page-caption');
+    });
+</script>
+
+<style>
+    .page-caption {
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show-page-caption {
+        top: 0px;
+        opacity: 1;
+        transition: 1s;
+    }
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid mid-section">
+    <div class="page-caption">
+        <h3>Tractor Master</h3>
+        <hr />
+    </div>
+    <div ng-controller="tractorController">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <div class="table-responsive table-frame">
+            <table class="table table-bordered table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Tractor Number</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="tractor in tractors|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+                        <td><img ng-src="{{tractor.tractor_active == 1 && '../img/active.png' || '../img/inactive.png'}}" /></td>
+                        <td>{{tractor.tractor_number}}</td>
+                        <td><button class="btn-primary" ng-click="viewTractorDetails(tractor.tractor_id)">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <dir-pagination-controls max-size="5"
+                                 direction-links="true"
+                                 boundary-links="true">
+        </dir-pagination-controls>
+
+        <script type="text/ng-template" id="tractorForm">
+            <div class="ngdialog-message">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tractor Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>Tractor Number</span>
+                                    <label>{{tractor_number}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label><img src="{{vehicle_image}}" width="250px" height="250px"/></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="ngdialog-buttons">
+                <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeDialog()">Ok</button>
+            </div>
+        </script>
+    </div>
+</div>
+</body>
+</html>

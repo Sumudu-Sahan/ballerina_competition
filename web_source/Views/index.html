@@ -1,0 +1,61 @@
+<html ng-app="app">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Fine Mate | Login</title>
+    <script src="../Resources/AngularJS/angular.js"></script>
+    <link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Stylesheet/login/custom.css" rel="stylesheet" />
+    <link href="../Stylesheet/login/responsive.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <script src="../NGScripts/Module/LoginModule.js"></script>
+    <script src="../NGScripts/Service/LoginService.js"></script>
+    <script src="../NGScripts/Controller/LoginController.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fm-logo').delay(3000).addClass('show-logo');
+            $('.fm-login-button-frame').delay(3000).addClass('show-btn-frame');
+            $('.fm-login-caption').delay(3000).addClass('show-fm-login-caption');
+            $('.fm-login-field').delay(3000).addClass('show-fm-login-field');
+            $('.fm-login-forgot-pw').delay(3000).addClass('show-frgt');
+            $('.fm-remember-me').delay(3000).addClass('show-rmb');
+            $('#fm-login').delay(3000).addClass('show-fm-login');
+        });
+    </script>
+</head>
+<body id="fm-login">
+    <div class="fm-login-form-frame">
+        <div class="fm-login-form" ng-controller="loginController">
+            <img src="../img/fm-logo.png" class="fm-logo" />
+            <form>
+                <!--username-->
+                <div class="fm-login-caption">
+                    Username
+                </div>
+                <div class="fm-login-field">
+                    <input type="text" ng-model="UserName" />
+                </div>
+                <!--password-->
+                <div class="fm-login-caption">
+                    Password
+                </div>
+                <div class="fm-login-field">
+                    <input type="password" ng-model="Password" />
+                </div>
+                <p class="fm-login-forgot-pw">
+                    <a href="#">
+                        I forgot my password
+                    </a>
+                </p>
+                <div class="fm-remember-me">
+                    <input type="checkbox" /><div class="rmb-txt">Remember me</div>
+                </div>
+                <div class="fm-login-button-frame">
+                    <input type="submit" value="Login" ng-model="Login" ng-click="validateLogin()" class="fm-login-btn">
+                    <input type="button" value="Sign up" class="fm-signup-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

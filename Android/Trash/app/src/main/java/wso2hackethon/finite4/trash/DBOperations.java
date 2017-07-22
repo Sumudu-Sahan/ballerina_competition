@@ -22,6 +22,54 @@ import java.net.URL;
 public class DBOperations {
     Data data = new Data();
 
+    public boolean addNewPost(String userID, String title, String description, String lat, String lon, String fileName){
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            try {
+                URL url = new URL(data.getSERVER_PHP_ROOT_PATH().trim() + "addNewPost.php");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                Uri.Builder builder = new Uri.Builder()
+                        .appendQueryParameter("userID", userID)
+                        .appendQueryParameter("title", title)
+                        .appendQueryParameter("description", description)
+                        .appendQueryParameter("lat", lat)
+                        .appendQueryParameter("lon", lon)
+                        .appendQueryParameter("fileName", fileName);
+
+                String query = builder.build().getEncodedQuery();
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(query);
+                writer.flush();
+                writer.close();
+                os.close();
+                try {
+                    conn.connect();
+                    return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
+
+                } catch (Exception e) {
+                    System.out.println("Ex " + e.toString());
+                    return false;
+                }
+            } catch (Exception ex) {
+                System.out.println("Ex " + ex.toString());
+                return false;
+            }
+        } catch (Exception ex) {
+            System.out.println("Ex " + ex.toString());
+            return false;
+        }
+    }
+
     public String[][] getAllNotifications(){
         String
                 line = "",
@@ -138,7 +186,6 @@ public class DBOperations {
                 user_account_type = "",
                 user_name = "",
                 user_image = "",
-                garbage_post_user_id = "",
                 garbage_post_title = "",
                 garbage_post_description = "",
                 garbage_post_image = "",
@@ -190,7 +237,6 @@ public class DBOperations {
                                 }
 
                                 garbage_post_id += jObject.getString("garbage_post_id") + "#";
-                                garbage_post_user_id += jObject.getString("garbage_post_user_id") + "#";
                                 garbage_post_title += jObject.getString("garbage_post_title") + "#";
                                 if (jObject.getString("garbage_post_description").isEmpty() || jObject.getString("garbage_post_description").equalsIgnoreCase("") || jObject.getString("garbage_post_description").equalsIgnoreCase("null")) {
                                     garbage_post_description += "-#";
@@ -236,7 +282,6 @@ public class DBOperations {
 
                             return new String[][]{
                                     garbage_post_id.split("#"),
-                                    garbage_post_user_id.split("#"),
                                     garbage_post_title.split("#"),
                                     garbage_post_description.split("#"),
                                     garbage_post_image.split("#"),

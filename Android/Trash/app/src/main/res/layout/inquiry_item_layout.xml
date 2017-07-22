@@ -79,13 +79,13 @@
                     android:orientation="horizontal"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_width="@dimen/logPadding"
+                        android:layout_width="@dimen/chathead_height"
                         android:id="@+id/viewOnMapButton"
                         android:src="@drawable/view_on_map"
                         android:clickable="true"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_height="@dimen/logPadding" />
+                        android:layout_height="wrap_content" />
                 </RelativeLayout>
             </LinearLayout>
 

@@ -1,0 +1,340 @@
+#fm-login {
+    background-image: url("../../img/bg.jpg");
+    background-size: cover;
+    filter: blur(10px);
+    transition: 1s;
+}
+.show-fm-login {
+    filter: blur(0px) !important;
+    transition: 1s !important;
+}
+.fm-login-form-frame {
+    width: 100%;
+    height: 100vh;
+}
+.fm-login-form {
+    margin: auto;
+    /* background: red; */
+    height: auto;
+    width: 35%;
+    top: 27vh;
+    position: relative;
+}
+.fm-logo {
+    width: 40%;
+    margin-bottom: 30px;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-modify: none;
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.show-logo {
+    top: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+.fm-login-button-frame {
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.show-btn-frame {
+    bottom: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+
+.fm-login-caption {
+    width: 30%;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    -webkit-user-select: none;
+    cursor: default;
+    position: relative;
+    left: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.show-fm-login-caption {
+    left: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+.fm-login-field {
+    width: 69%;
+    display: inline-block;
+    margin: 10px 0px;
+    position: relative;
+    right: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.show-fm-login-field {
+    right: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+.fm-login-field > input {
+    width: 100%;
+    background: none;
+    height: 40px;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    border: solid 1px #fff;
+    padding: 10px;
+}
+input.fm-login-btn:active {
+    box-shadow: 5px 5px 10px #000;
+}
+.fm-login-forgot-pw a{
+    color: #aaa;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+.fm-login-forgot-pw a:hover{
+    text-decoration: none;
+}
+.fm-login-forgot-pw {
+    margin: 20px 0px;
+}
+.fm-remember-me input[type='checkbox'], .rmb-txt {
+    display: inline-block;
+}
+.fm-remember-me {
+    color: #aaa;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+    top: 5px;
+    position: relative;
+}
+.fm-login-forgot-pw {
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.fm-remember-me {
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+    transition: 1s;
+}
+.show-frgt {
+    bottom: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+.show-rmb {
+    bottom: 0px;
+    opacity: 1;
+    transition: 1s;
+}
+.rmb-txt {
+    font-size: 18px;
+    color: #aaa;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+    position: relative;
+    top: 2px;
+}
+.fm-remember-me input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input.fm-login-btn,
+input.fm-signup-btn {
+    width: 48%;
+    height: 50px;
+    background-color: #008080;
+    border: none;
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    transition: 0.5s;
+}
+input.fm-login-btn {
+    float: left;
+}
+input.fm-signup-btn {
+    float: right;
+}
+/*on hover*/
+input.fm-login-btn:hover,
+input.fm-signup-btn:hover {
+    background-color: #fff;
+    color: #008080;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+div.right-field-details {
+    display: inline-block;
+}
+.col-xs-2.left-field > div {
+    padding: 5px 0px;
+}
+.right-field-details > div {
+    padding: 5px 0px;
+}
+.right-field-details {
+    margin-right: 30px;
+}
+body {
+    background-color: #ececec;
+}
+.form-group label,
+table.table.table-bordered.table-condensed.table-striped th,
+table.table.table-bordered.table-condensed.table-striped td {
+    color: #213140;
+    /*font-family: 'Roboto Light', sans-serif;*/
+    font-size: 14px;
+    padding: 20px;
+}
+.form-group label {
+    padding: 0px;
+}
+form.form-inline {
+    padding: 5px;
+}
+table.table.table-bordered.table-condensed.table-striped th {
+    font-weight: 900;
+    text-align: center;
+}
+table.table.table-bordered.table-condensed.table-striped td button{
+    border: none;
+}
+table.table.table-bordered.table-condensed.table-striped td button {
+    border: none;
+    background-color: #1e8bc3;
+    /*padding: 10px 40px;*/
+    transition: 0.3s;
+    margin: auto;
+    display: block;
+    height: 45px;
+    margin-top: 2px;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+table.table.table-bordered.table-condensed.table-striped td button:hover {
+    background-color: #40c381;
+    height: 47px;
+    margin-top: 0px;
+    width: 85%;
+    transition: 0.3s;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    font-size: 16px;
+}
+.table-bordered > tbody > tr > td {
+    height: 60px;
+}
+table.table.table-bordered.table-condensed.table-striped td > p {
+    margin-top: 17px;
+    text-align: center;
+}
+table.table.table-bordered.table-condensed.table-striped > thead > tr {
+    background-color: #213140;
+}
+table.table.table-bordered.table-condensed.table-striped > thead > tr  > th{
+    color: #fff;
+}
+.table-responsive.table-frame {
+    padding: 5px;
+    transition: 0.3s;
+}
+.table-responsive.table-frame:hover {
+    padding: 0px;
+    transition: 0.3s;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+table.table.table-bordered.table-condensed.table-striped > tbody > tr {
+    transition: 0.3s;
+}
+table.table.table-bordered.table-condensed.table-striped > tbody > tr:hover,
+table.table.table-bordered.table-condensed.table-striped > tbody > tr:active{
+    background-color: #BDC3C7;
+    transition: 0.3s;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #40c381;
+    border-color: #40c381;
+}
+.panel-primary>.panel-heading {
+    background-color: #1e8bc3;
+    border-color: #1e8bc3;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary {
+    background: #1e8bc3;
+    transition: 0.3s;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary:hover {
+    background: #40c381;
+    transition: 0.3s;
+}
+.site-body-cont {
+    padding-top: 75px;
+}
+.page-caption > h3 {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #213140;
+}
+.page-caption > h3 {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #213140;
+}
+.page-caption > hr {
+    border-bottom: 2px solid #213140;
+    width: 30%;
+    left: 0px;
+    margin: 0px 0px 20px 5px;
+}
+.input-group > span.input-group-addon:nth-child(1) {
+    width: 30%;
+}
+.input-group > span.input-group-addon:nth-child(1) {
+    width: 150px;
+    background-color: #1e8bc3;
+    color: #fff;
+    text-align: left;
+}
+.btn {
+    background-color: #1e8bc3;
+    transition: 0.3s;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background-color: #40c381;
+    transition: 0.3s;
+}
+
+/*respomsive*/
+@media only screen and (min-device-width: 0px) and (max-device-width: 768px) {
+    .fm-login-form {
+        width: 80%;
+    }
+}
+/*ipad landscape*/
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .fm-login-form {
+        width: 40%;
+    }
+}

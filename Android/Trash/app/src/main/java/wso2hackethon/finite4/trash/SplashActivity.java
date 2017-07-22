@@ -14,6 +14,7 @@ import android.widget.Toast;
  */
 
 public class SplashActivity extends Activity {
+    Data data = new Data();
     NetworkStatChecker n = new NetworkStatChecker();
     Context context;
 
@@ -24,6 +25,18 @@ public class SplashActivity extends Activity {
         context = SplashActivity.this;
 
         new CheckInternetConnection().execute();
+    }
+
+    private void createDirectory() {
+        if (!data.getSTORAGE_PATH().exists()) {
+            data.getSTORAGE_PATH().mkdirs();
+        }
+    }
+
+    private boolean checkDirectoryAvailable() {
+        if (!data.getSTORAGE_PATH().exists()) {
+            return false;
+        } else return true;
     }
 
     @Override
@@ -41,6 +54,19 @@ public class SplashActivity extends Activity {
 
         @Override
         protected Boolean doInBackground(String... urls) {
+            try{
+                boolean dirCheck = checkDirectoryAvailable();
+                if(dirCheck){
+
+                }
+                else{
+                    createDirectory();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             return n.isConnected(context);
         }
 

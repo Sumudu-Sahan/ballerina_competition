@@ -1,0 +1,152 @@
+<html ng-app="garbagePostApp">
+<head>
+<meta charset="ISO-8859-1">
+<link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+<link href="../Resources/UIGrids/CSS/ui-grid.css" rel="stylesheet" />
+
+<style>
+    .myGrid {
+        width: 1000px;
+        height: 400px;
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK9wniZkvOlacVZnMGFBp900wKs3wNhMg"></script>
+<script src="../Resources/AngularJS/angular.js"></script>
+<link href="../Resources/ngDialog/css/ngDialog.css" rel="stylesheet" />
+<link href="../Resources/ngDialog/css/ngDialog-theme-default.css" rel="stylesheet" />
+<script src="../Resources/ngDialog/js/ngDialog.js"></script>
+<script src="../Resources/NG-pagination/pagination.js"></script>
+
+<script src="../NGScripts/Module/garbagePostModule.js"></script>
+<script src="../NGScripts/Controller/garbagePostController.js"></script>
+<script src="../NGScripts/Service/garbagePostService.js"></script>
+
+<link href="../Resources/ProjectResource/custom.css" rel="stylesheet" />
+<link href="../Resources/ProjectResource/responsive.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.page-caption').delay(3000).addClass('show-page-caption');
+    });
+</script>
+
+<style>
+    .page-caption {
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show-page-caption {
+        top: 0px;
+        opacity: 1;
+        transition: 1s;
+    }
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid mid-section">
+    <div class="page-caption">
+        <h3>Garbage Dispatch Request</h3>
+        <hr />
+    </div>
+    <div ng-controller="garbagePostController">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <div class="table-responsive table-frame">
+            <table class="table table-bordered table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Post Title</th>
+                        <th>Post Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="post in GarbagePostList|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+                        <td><img ng-src="{{post.garbage_post_status == 1 && '../img/active.png' || '../img/inactive.png'}}" /></td>
+                        <td>{{post.garbage_post_title}}</td>
+                        <td>{{post.garbage_post_description}}</td>
+                        <td><button class="btn-primary" ng-click="viewPostRequest(post.garbage_post_id)">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <dir-pagination-controls max-size="5"
+                                 direction-links="true"
+                                 boundary-links="true">
+        </dir-pagination-controls>
+
+        <script type="text/ng-template" id="requestForm">
+            <div class="ngdialog-message">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Request Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>Post Title</span>
+                                    <label>{{post_title}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>Post Description</span>
+                                    <label>{{post_description}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label><img src="{{post_image}}" width="250px" height="250px"/></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="map" style="width: 800px; height: 400px;">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Status</span>
+                                    <select ng-model="drpType" class="form-control" id="drpType" ng-change="statusChange(drpType)">
+                                        <option value="1" ng-selected="true">Allow</option>
+                                        <option value="2">Reject</option>
+                                    </select>
+                                    <span class="input-group-addon" id="validate_RouteName"></span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row" ng-hide="isHide">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Route Name</span>
+                                    <input type="text" class="form-control" id="RouteName" ng-model="RouteName" />
+                                    <span class="input-group-addon" id="validate_RouteName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="ngdialog-buttons">
+                <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="addToRoute()">Add to Route</button>
+                <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeDialog()">Close</button>
+            </div>
+        </script>
+    </div>
+</div>
+</body>
+</html>

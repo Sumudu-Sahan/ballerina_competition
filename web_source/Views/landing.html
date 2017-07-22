@@ -1,0 +1,86 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+      <head>
+            <title>Trash Collector</title>
+            <meta charset="ISO-8859-1">
+            <link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+            <link href="../Resources/Bootstrap/CSS/bootstrap-datetimepicker.css" rel="stylesheet" />
+            <link href="../Resources/UIGrids/CSS/ui-grid.css" rel="stylesheet" />
+            <script src="../Resources/Bootstrap/Scripts/jquery-1.9.1.min.js"></script>
+            <script src="../Resources/ProjectResource/jquery-3.1.1.min.js"></script>
+            <script src="../Resources/ProjectResource/custom.min.js"></script>
+            <link href="../Resources/ProjectResource/custom.min.css" rel="stylesheet" />
+            <link href="../Resources/ProjectResource/responsive.min.css" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+            <link href="../Stylesheet/index.css" rel="stylesheet"/>
+            <style>
+                .logo > a > img {
+                    width: 120px;
+                }
+
+            </style>
+
+<script type="text/javascript">
+    function loadPages(pageName){
+            $("#frame").attr('src',pageName);    
+    }
+</script>
+
+      </head>
+      <body>
+            
+        <header>
+            <div id="header">
+                <div class="content-wrapper">
+                    <div class="container-fluid">
+                        <div class="logo">
+                            <a href="#" id="logoURL"><img src="../img/logo.png" /></a>
+                        </div>
+                        <nav class="main-nav">
+                            <div class="trigger" id="trigger"><img src="img/menu.png" /></div>
+                            <ul class="main-menu" id="main-menu">
+                                <li id="mnu_dashboard"><img class="main-menu-ico" src="../img/dashboard-icon.png" /><a href="#" onclick="loadPages('garbagePost.html')">Request</a></li>
+                                <!--<li id="driver-menu-item"><img class="main-menu-ico" src="../img/driver-icon.png" /><a href="#" onclick="loadPages('tractor.html')">Masters Manager</a></li>-->
+                                <li id="mnu_fine" class="has-sub-menu">
+                                    <img class="main-menu-ico" src="../img/driver-icon.png" />
+                                    <a href="#">Route Manager</a>
+                                    <ul class="sub-menu">
+                                        <li id="sub_mnu_finemaster"><a href="#" onclick="loadPages('defineRoute.html')">Define Route</a></li>
+                                        <li id="sub_mnu_finemaster"><a href="#" onclick="loadPages('assignDriver.html')">Assign Driver</a></li>
+                                    </ul>
+                                </li>
+                                <li id="mnu_masters" class="has-sub-menu">
+                                    <img class="main-menu-ico" src="../img/driver-icon.png" />
+                                    <a href="#">Masters</a>
+                                    <ul class="sub-menu">
+                                        <li id="sub_mnu_fineform"><a href="#" onclick="loadPages('tractor.html')">Tractor Master</a></li>
+                                        <li id="sub_mnu_fineform"><a href="#" onclick="">Driver Master</a></li>
+                                        <li id="sub_mnu_fineform"><a href="#" onclick="">User Master</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub-menu">
+                                <img class="main-menu-ico" src="../img/user-icon.png" />
+                                <a href="#">Test User</a>
+                                <ul class="sub-menu">
+                                    <li><a href="../Views/">Log Out</a></li>
+                                </ul>
+                            </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </header>
+            <div id="container">
+                  <iframe  id="frame" src="garbagePost.html"></iframe>
+            </div>
+            
+    <footer>
+        <div class="footer-frame">
+            <div class="container-fluid">
+                <p class="text-center">Powered by Finite4</p>
+            </div>
+        </div>
+    </footer>
+      </body>
+</html>

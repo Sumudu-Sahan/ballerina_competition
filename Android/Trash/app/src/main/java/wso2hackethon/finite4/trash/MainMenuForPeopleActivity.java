@@ -1,7 +1,9 @@
 package wso2hackethon.finite4.trash;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -45,7 +47,9 @@ public class MainMenuForPeopleActivity extends Activity {
         addReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(context, AddNewPostActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
@@ -53,7 +57,9 @@ public class MainMenuForPeopleActivity extends Activity {
         viewOldReports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(context, ViewAllInquiriesActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
@@ -126,5 +132,15 @@ public class MainMenuForPeopleActivity extends Activity {
         backButtonOption();
     }
 
-    public void backButtonOption(){}
+    public void backButtonOption(){
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Do you really want to exit?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        System.exit(0);
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
+    }
 }

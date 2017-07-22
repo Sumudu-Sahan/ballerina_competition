@@ -1,0 +1,128 @@
+<html ng-app="defineRouteApp">
+<head>
+<meta charset="ISO-8859-1">
+<link href="../Resources/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+<link href="../Resources/UIGrids/CSS/ui-grid.css" rel="stylesheet" />
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK9wniZkvOlacVZnMGFBp900wKs3wNhMg"></script>
+<script src="../Resources/AngularJS/angular.js"></script>
+<link href="../Resources/ngDialog/css/ngDialog.css" rel="stylesheet" />
+<link href="../Resources/ngDialog/css/ngDialog-theme-default.css" rel="stylesheet" />
+<script src="../Resources/ngDialog/js/ngDialog.js"></script>
+
+<script src="../NGScripts/Module/defineRouteModule.js"></script>
+<script src="../NGScripts/Controller/defineRouteController.js"></script>
+<script src="../NGScripts/Service/defineRouteService.js"></script>
+
+<link href="../Resources/ProjectResource/custom.css" rel="stylesheet" />
+<link href="../Resources/ProjectResource/responsive.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.page-caption').delay(3000).addClass('show-page-caption');
+    });
+</script>
+
+<style>
+    .page-caption {
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show-page-caption {
+        top: 0px;
+        opacity: 1;
+        transition: 1s;
+    }
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid mid-section">
+    <div class="page-caption">
+        <h3>Define Routes</h3>
+        <hr />
+    </div>
+    <div ng-controller="defineRouteController">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Operation Type</span>
+                        <select ng-model="drpType" class="form-control" id="drpType" ng-change="drpTypeChange()">
+                            <option value="1" ng-selected="true">New</option>
+                            <option value="2">Existing</option>
+                        </select>
+                        <span class="input-group-addon" id="validate_RouteName"></span>
+                    </div>
+                    <br />
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Route Name</span>
+                        <input type="text" ng-hide="txtHide" class="form-control" ng-disabled="isEnabled" id="RouteName" ng-model="RouteName" />
+                        <select ng-model="drpRoute" ng-hide="cmbHide" class="form-control" id="drpRoute" 
+                            ng-change="drpRouteChange(drpRoute)" ng-options="route.route_name for route in RouteNames track by route.route_id"></select>
+                        <span class="input-group-addon" id="validate_RouteName"></span>
+                    </div>
+                    <br />
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Description</span>
+                        <input type="text" class="form-control" ng-disabled="isEnabled" id="Description" ng-model="Description" />
+                        <span class="input-group-addon" id="validate_Description"></span>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-offset-1 col-md-6">
+                <div id="map" style="width: 1000px; height: 400px;">
+                </div>
+                <br/>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive table-frame">
+                        <table class="table table-bordered table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location Name</th>
+                                    <th>Longitude</th>
+                                    <th>Lattitude</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            <tr ng-repeat="marker in markerList">
+                                <td>{{marker.location}}</td>
+                                <td>{{marker.lat}}</td>
+                                <td>{{marker.long}}</td>
+                                <td><img src="../img/delete.png" width="5%" height="5%" ng-click="removeLocation(marker)"></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>     
+                </div>
+                <br/>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-10">
+                    <button class="btn btn-primary btn-small" ng-click="saveRecord()">Save</button>
+                    <button class="btn btn-primary btn-small">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+</body>
+</html>

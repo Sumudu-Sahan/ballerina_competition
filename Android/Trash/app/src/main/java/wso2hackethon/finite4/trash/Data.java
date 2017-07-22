@@ -1,6 +1,9 @@
 package wso2hackethon.finite4.trash;
 
 import android.graphics.Color;
+import android.os.Environment;
+
+import java.io.File;
 
 /**
  * Created by Sumudu on 7/15/2017.
@@ -8,8 +11,10 @@ import android.graphics.Color;
 
 public class Data {
 
+    private File STORAGE_PATH = new File(Environment.getExternalStorageDirectory() + "/trash_hunter");
+
     private String[] NAVIGATION_ITEM_NAME = new String[]{"Home", "Notifications", "My Account", "Logout"};
-    private int[] NAVIGATION_ITEM_ICON = new int[]{R.drawable.ic_home, R.drawable.ic_bell, R.drawable.ic_account, R.drawable.ic_logout};
+    private int[] NAVIGATION_ITEM_ICON = new int[]{R.drawable.home_outline, R.drawable.bell_outline, R.drawable.account_outline, R.drawable.logout_outline};
 
     private int[] colorsForSwiper = new int[]{Color.parseColor("#ff8000"), Color.parseColor("#ff0000"), Color.parseColor("#00ff00"), Color.parseColor("#0000ff"), Color.parseColor("#000000")};
 
@@ -17,8 +22,8 @@ public class Data {
     private int GOOGLEPLUS = 2;
     private int DEFAULTEMAIL = 3;
 
-    private String SERVER_PHP_ROOT_PATH = "http://192.168.1.11/trash_hunter/PHP/";
-    private String SERVER_IMG_ROOT_PATH= "http://192.168.1.11/trash_hunter/img/";
+    private String SERVER_PHP_ROOT_PATH = "http://192.168.8.100/trash_hunter/PHP/";
+    private String SERVER_IMG_ROOT_PATH= "http://192.168.8.100/trash_hunter/img/";
 
     public String getSERVER_PHP_ROOT_PATH() {
         return SERVER_PHP_ROOT_PATH;
@@ -50,5 +55,9 @@ public class Data {
 
     public int[] getColorsForSwiper() {
         return colorsForSwiper;
+    }
+
+    public File getSTORAGE_PATH() {
+        return STORAGE_PATH;
     }
 }

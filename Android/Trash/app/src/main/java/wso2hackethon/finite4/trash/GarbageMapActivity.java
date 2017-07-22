@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -66,12 +68,22 @@ public class GarbageMapActivity extends FragmentActivity implements OnMapReadyCa
 
     Timer timer = new Timer();
 
+    ImageView backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garbage_map);
 
         context = GarbageMapActivity.this;
+
+        backButton = (ImageView) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backButtonOption();
+            }
+        });
 
         Intent i = getIntent();
         if(i != null){
@@ -102,6 +114,23 @@ public class GarbageMapActivity extends FragmentActivity implements OnMapReadyCa
     protected void onStart() {
         super.onStart();
         mGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onBackPressed() {
+        backButtonOption();
+    }
+
+    public void backButtonOption(){
+        try{
+            timer.cancel();
+        }
+        catch (Exception e){
+
+        }
+        Intent i = new Intent(context, MainMenuForPeopleActivity.class);
+        startActivity(i);
+        finish();
     }
 
     @Override

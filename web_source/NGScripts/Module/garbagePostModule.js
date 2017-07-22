@@ -1,0 +1,1 @@
+var garbagePostApp = angular.module('garbagePostApp', ['angularUtils.directives.dirPagination', 'ngDialog']);
