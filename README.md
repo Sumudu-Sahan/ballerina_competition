@@ -10,6 +10,6 @@ The project folder containing as follow
 
 Microservices links are follows
 
-http://{hostname}:9090/api/getAllGarbagePoints/all
-http:// {hostname}:9090/api/getAllInquiries/all
-http:// {hostname}:9090/api/getDriver/1 
+* http://{hostname}:9090/api/getAllGarbagePoints/all
+* http:// {hostname}:9090/api/getAllInquiries/all
+* http:// {hostname}:9090/api/getDriver/1 
